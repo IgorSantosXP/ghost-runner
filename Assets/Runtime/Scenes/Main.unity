@@ -365,8 +365,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.8840008, z: 0.65350616}
-  m_Center: {x: 0, y: 0.9397299, z: -0.14619437}
+  m_Size: {x: 1, y: 2.8531034, z: 0.65350616}
+  m_Center: {x: 0, y: 0.9551787, z: -0.14619437}
 --- !u!33 &1037677791
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -403,7 +403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf8e8f06322bd242b9fde83a8e84df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1037677788}
   animator: {fileID: 95787216955598432}
 --- !u!1 &1937575921
 GameObject:
@@ -566,6 +565,10 @@ PrefabInstance:
     - target: {fileID: 8403506849906156513, guid: 5fa8ddd6aa6f84d4fbb94690601088f9, type: 3}
       propertyPath: m_Name
       value: Character_Chost
+      objectReference: {fileID: 0}
+    - target: {fileID: 8488801779253718063, guid: 5fa8ddd6aa6f84d4fbb94690601088f9, type: 3}
+      propertyPath: m_CullingMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa8ddd6aa6f84d4fbb94690601088f9, type: 3}
