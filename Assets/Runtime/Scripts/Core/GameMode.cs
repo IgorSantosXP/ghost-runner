@@ -30,6 +30,8 @@ public class GameMode : MonoBehaviour
 
     public void OnGameOver()
     {
+        animator.SetTrigger(PlayerAnimationConstants.DieTrigger);
+        player.Die();
         StartCoroutine(RestartGame());
     }
 
