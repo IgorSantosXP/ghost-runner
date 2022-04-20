@@ -15,6 +15,6 @@ public class PlayerAnimationController : MonoBehaviour
 
     private void Update()
     {
-        animator.SetBool("IsJumping", player.IsJumping);
+        animator.SetBool(PlayerAnimationConstants.IsJumping, player.IsJumping);
     }
 }
