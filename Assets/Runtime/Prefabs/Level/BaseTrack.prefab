@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4029529510549289128}
   - component: {fileID: 3344345747857274236}
+  - component: {fileID: -5822994553026497712}
   m_Layer: 0
   m_Name: BaseTrack
   m_TagString: Untagged
@@ -49,6 +50,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 4029529510608006708}
   endPoint: {fileID: 4029529512137128661}
+--- !u!114 &-5822994553026497712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4029529510549289129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20a864937c591c7488bd71d3c3e31a9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacles:
+  - {fileID: 6054860839118048775, guid: 56ed46bf3bf19924b9a7ab2863c8dc23, type: 3}
+  - {fileID: 5589812876413005270, guid: edb251e2e62dde84dabfd5ad644b3eb3, type: 3}
+  - {fileID: 6758996807227759675, guid: e92be6555d13c8548a340fd9dfe6034a, type: 3}
+  spawnPoints: []
 --- !u!1 &4029529510608006709
 GameObject:
   m_ObjectHideFlags: 0
