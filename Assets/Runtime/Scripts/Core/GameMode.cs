@@ -10,9 +10,12 @@ public class GameMode : MonoBehaviour
 
     private bool isWaitingStart = false;
     private bool isPaused = false;
+    public int TravelledDistance { get; private set; }
+    public int HighestDistance {get; private set; }
 
     private void Awake()
     {
+        HighestDistance = PlayerPrefs.GetInt("highestDistance");
         player.enabled = false;
         isWaitingStart = true;
         isPaused = false;
@@ -20,6 +23,7 @@ public class GameMode : MonoBehaviour
 
     void Update()
     {
+        TravelledDistance = (int) player.transform.position.z;
         if (isWaitingStart && !isPaused)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -53,6 +57,7 @@ public class GameMode : MonoBehaviour
     {
         animator.SetTrigger(PlayerAnimationConstants.DieTrigger);
         player.Die();
+        CheckHighestDistance();
         StartCoroutine(RestartGame());
     }
 
@@ -68,6 +73,22 @@ public class GameMode : MonoBehaviour
         isPaused = false;
         Time.timeScale = 1;
         uiController.OnResumeGame();
+    }
+
+    public void OnQuitGame()
+    {
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+        Application.Quit();
+    }
+
+    private void CheckHighestDistance()
+    {
+        if(TravelledDistance > HighestDistance)
+        {
+            PlayerPrefs.SetInt("highestDistance", TravelledDistance);
+        }
     }
 
     private IEnumerator RestartGame()

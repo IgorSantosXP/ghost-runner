@@ -9,7 +9,7 @@ public class TrackGenerator : MonoBehaviour
     [SerializeField] private List<GameObject> tracks = new List<GameObject>();
     [SerializeField] private int tracksToSpawn = 5;
     private List<GameObject> spawnedTracks = new List<GameObject>();
-    private float distanceToDestroy = 20f;
+    private float distanceToDestroy = 40f;
 
     private void Start()
     {
