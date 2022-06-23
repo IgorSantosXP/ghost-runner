@@ -12,9 +12,16 @@ public class GameMode : MonoBehaviour
     private bool isPaused = false;
     public int TravelledDistance { get; private set; }
     public int HighestDistance {get; private set; }
+    public float ForwardSpeed { get; private set; } = 10f;
+    private bool isPlaying = false;
+    private float maxForwardSpeed = 50f;
+    private float timeToMaxForwardSpeed = 300f;
+    private float startGameTime;
+    private float startGameSpeed;
 
     private void Awake()
     {
+        startGameSpeed = ForwardSpeed;
         HighestDistance = PlayerPrefs.GetInt("highestDistance");
         player.enabled = false;
         isWaitingStart = true;
@@ -23,7 +30,16 @@ public class GameMode : MonoBehaviour
 
     void Update()
     {
-        TravelledDistance = (int) player.transform.position.z;
+        if (isPlaying)
+        {
+            float timePercent = (Time.time - startGameTime) / timeToMaxForwardSpeed;
+            ForwardSpeed = Mathf.Lerp(startGameSpeed, maxForwardSpeed, timePercent);
+
+            TravelledDistance = (int) player.transform.position.z;
+        }
+        
+
+        
         if (isWaitingStart && !isPaused)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -50,12 +66,16 @@ public class GameMode : MonoBehaviour
         animator.SetTrigger(PlayerAnimationConstants.StartGameTrigger);
         player.enabled = true;
         isWaitingStart = false;
+        isPlaying = true;
+        startGameTime = Time.time;
         uiController.OnStartGame();
     }
 
     public void OnGameOver()
     {
         animator.SetTrigger(PlayerAnimationConstants.DieTrigger);
+        ForwardSpeed = 0;
+        isPlaying = false;
         player.Die();
         CheckHighestDistance();
         StartCoroutine(RestartGame());
@@ -64,6 +84,7 @@ public class GameMode : MonoBehaviour
     public void OnPauseGame()
     {
         isPaused = true;
+        isPlaying = false;
         Time.timeScale = 0;
         uiController.OnPauseGame();
     }
@@ -71,6 +92,7 @@ public class GameMode : MonoBehaviour
     public void OnResumeGame()
     {
         isPaused = false;
+        isPlaying = true;
         Time.timeScale = 1;
         uiController.OnResumeGame();
     }

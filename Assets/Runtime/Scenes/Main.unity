@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 9af23ba5fa5364ff598888460e0e2759, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.36157432, g: 0.3648556, b: 0.33589897, a: 1}
+  m_IndirectSpecularColor: {r: 0.041250892, g: 0.07305416, b: 0.12561989, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2368,15 +2368,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5949710174633867494, guid: 9c93f004af7ce9b488e1e6ea7423be6d, type: 3}
       propertyPath: m_Color.b
-      value: 0.254717
+      value: 0.754717
       objectReference: {fileID: 0}
     - target: {fileID: 5949710174633867494, guid: 9c93f004af7ce9b488e1e6ea7423be6d, type: 3}
       propertyPath: m_Color.g
-      value: 0.254717
+      value: 0.754717
       objectReference: {fileID: 0}
     - target: {fileID: 5949710174633867494, guid: 9c93f004af7ce9b488e1e6ea7423be6d, type: 3}
       propertyPath: m_Color.r
-      value: 0.254717
+      value: 0.754717
       objectReference: {fileID: 0}
     - target: {fileID: 5949710174633867495, guid: 9c93f004af7ce9b488e1e6ea7423be6d, type: 3}
       propertyPath: m_RootOrder
@@ -2384,39 +2384,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5949710174633867495, guid: 9c93f004af7ce9b488e1e6ea7423be6d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.99
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5949710174633867495, guid: 9c93f004af7ce9b488e1e6ea7423be6d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.74
+      value: 36.4
       objectReference: {fileID: 0}
     - target: {fileID: 5949710174633867495, guid: 9c93f004af7ce9b488e1e6ea7423be6d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.44
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5949710174633867495, guid: 9c93f004af7ce9b488e1e6ea7423be6d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9658996
+      value: 0.59243
       objectReference: {fileID: 0}
     - target: {fileID: 5949710174633867495, guid: 9c93f004af7ce9b488e1e6ea7423be6d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0071256575
+      value: 0.8056219
       objectReference: {fileID: 0}
     - target: {fileID: 5949710174633867495, guid: 9c93f004af7ce9b488e1e6ea7423be6d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.25881192
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5949710174633867495, guid: 9c93f004af7ce9b488e1e6ea7423be6d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0019093123
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5949710174633867495, guid: 9c93f004af7ce9b488e1e6ea7423be6d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -0.845
+      value: 107.341
       objectReference: {fileID: 0}
     - target: {fileID: 5949710174633867495, guid: 9c93f004af7ce9b488e1e6ea7423be6d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5949710174633867495, guid: 9c93f004af7ce9b488e1e6ea7423be6d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2439,6 +2439,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5981599329250818773, guid: 682c8970791446f478cafb8a290a8461, type: 3}
+      propertyPath: gameMode
+      value: 
+      objectReference: {fileID: 1290906656}
     - target: {fileID: 5981599329250818773, guid: 682c8970791446f478cafb8a290a8461, type: 3}
       propertyPath: m_Enabled
       value: 1

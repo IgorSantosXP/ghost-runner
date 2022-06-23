@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 { 
-    [SerializeField] private float forwardSpeed = 10f;
+    [SerializeField] private GameMode gameMode;
     [SerializeField] private float laneDistanceX = 1.5f;
     [SerializeField] private float horizontalSpeed = 10f;
 
@@ -23,8 +23,8 @@ public class PlayerController : MonoBehaviour
     public bool IsJumping { get; private set; }
     public bool IsRolling { get; private set; }
     public float JumpPercent { get; private set; }
-    public float JumpDuration => jumpDistanceZ / forwardSpeed;
-    public float RollDuration => rollDistanceZ / forwardSpeed;
+    public float JumpDuration => jumpDistanceZ / gameMode.ForwardSpeed;
+    public float RollDuration => rollDistanceZ / gameMode.ForwardSpeed;
     private float LeftLaneX => initialPosition.x - laneDistanceX;
     private float RightLaneX => initialPosition.x + laneDistanceX;
     private float targetPositionX;
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 position = transform.position;
 
-        position.z += forwardSpeed*Time.deltaTime;
+        position.z += gameMode.ForwardSpeed*Time.deltaTime;
         position.x = ProcessLaneMovement();
         position.y = ProcessJump();
         ProcessRoll();
@@ -148,7 +148,6 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        forwardSpeed = 0;
         horizontalSpeed = 0;
         targetPositionX = transform.position.x;
         StopRoll();
