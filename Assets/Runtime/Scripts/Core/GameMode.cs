@@ -14,6 +14,7 @@ public class GameMode : MonoBehaviour
     public int HighestDistance {get; private set; }
     public float ForwardSpeed { get; private set; } = 10f;
     private bool isPlaying = false;
+    private bool isDead = false;
     private float maxForwardSpeed = 50f;
     private float timeToMaxForwardSpeed = 300f;
     private float startGameTime;
@@ -26,11 +27,12 @@ public class GameMode : MonoBehaviour
         player.enabled = false;
         isWaitingStart = true;
         isPaused = false;
+        isDead = false;
     }
 
     void Update()
     {
-        if (isPlaying)
+        if (isPlaying && !isDead)
         {
             float timePercent = (Time.time - startGameTime) / timeToMaxForwardSpeed;
             ForwardSpeed = Mathf.Lerp(startGameSpeed, maxForwardSpeed, timePercent);
@@ -67,6 +69,7 @@ public class GameMode : MonoBehaviour
         player.enabled = true;
         isWaitingStart = false;
         isPlaying = true;
+        isDead = false;
         startGameTime = Time.time;
         uiController.OnStartGame();
     }
@@ -75,6 +78,7 @@ public class GameMode : MonoBehaviour
     {
         animator.SetTrigger(PlayerAnimationConstants.DieTrigger);
         ForwardSpeed = 0;
+        isDead = true;
         isPlaying = false;
         player.Die();
         CheckHighestDistance();
