@@ -7,6 +7,7 @@ public class GameMode : MonoBehaviour
     [SerializeField] private PlayerController player;
     [SerializeField] private Animator animator;
     [SerializeField] private UIController uiController;
+    [SerializeField] private MusicPlayer musicPlayer;
 
     private bool isWaitingStart = false;
     private bool isPaused = false;
@@ -22,6 +23,7 @@ public class GameMode : MonoBehaviour
 
     private void Awake()
     {
+        musicPlayer.PlayMusic();
         startGameSpeed = ForwardSpeed;
         HighestDistance = PlayerPrefs.GetInt("highestDistance");
         player.enabled = false;
