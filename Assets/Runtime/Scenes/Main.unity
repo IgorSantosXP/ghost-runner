@@ -451,6 +451,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1290906656}
+    - target: {fileID: 1335983981195483720, guid: b3bb5ce31f6386649b79c19fe64a6399, type: 3}
+      propertyPath: m_text
+      value: 'GhostRunner '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335983981633192753, guid: b3bb5ce31f6386649b79c19fe64a6399, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3bb5ce31f6386649b79c19fe64a6399, type: 3}
 --- !u!1001 &1901497219127101147
